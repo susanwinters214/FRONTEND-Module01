@@ -40,3 +40,50 @@ code . - opens an instance of VS Code at your current directory
 
 EXERCISE:
 https://github.com/susanwinters214/PizzaAlgoCsharp
+
+
+
+git branch featureBranch
+git checkout featureBranch
+git add .
+git commit -m "adding a change from the feature branch"
+git checkout main
+git push origin featureBranch
+git merge branchName
+git checkout main
+git pull  # doing this before any merge or push is almost always a good idea
+git merge featureBranch
+
+We'll create a new branch called bugFix:
+
+git branch bugFix
+Then, we'll switch to the bugFix branch:
+
+git checkout bugFix
+Once on bugFix, we'll make changes. Then, we need to add our changes to the staging area and commit them.
+
+git add .
+git commit -m "Made some changes on bugFix"
+It's time to merge bugFix into our main branch.
+
+git checkout main
+git merge bugFix
+
+CONFLICT RESOLUTION:
+Resolve Merge Conflicts
+Abort - stop the process
+
+git merge --abort
+Resolve the conflict manually - go through the code and making edits
+
+git diff --color-words main..branch1 filename.txt
+or
+
+git show --color-words
+Take out the git markers and choose what changes we want.
+
+git status
+git add filename.txt
+git status
+git commit -m "with a descriptive message"
+DONE
